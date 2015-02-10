@@ -1,0 +1,7 @@
+{
+  "name": "LL",
+  "author": "Daniel Hay <danielhay@gatech.edu>",
+  "license": "MIT",
+  "version": "1.0.0",
+  "description": "Templated Linked List"
+}
