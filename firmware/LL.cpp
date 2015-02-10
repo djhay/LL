@@ -7,6 +7,7 @@
 //
 
 #include "LL.h"
+/*
 template <typename T>
 LL<T>::LL() : count(0), head(NULL), tail(NULL)
 {
@@ -60,3 +61,4 @@ template <typename T> T LL<T>::dequeue()
     return ret;
     
 }
+*/

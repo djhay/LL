@@ -19,10 +19,49 @@ private:
     LLNode<T>* tail;
     int count;
 public:
-    LL();
-    int size();
-    void enqueue(T data);
-    T dequeue();
-    
+    LL() : count(0), head(NULL), tail(NULL){};
+    int size()
+    {
+        return count;
+    };
+    void enqueue(T data) {
+        
+    if (head == NULL)
+    {
+        head = new LLNode<T>();
+        head->data = data;
+        tail = head;
+    } else {
+        LLNode<T>* curr = new LLNode<T>();
+        curr->data = data;
+        curr->next = head;
+        head = curr;
+    }
+    ++count;
+    };
+    T dequeue(){
+        
+    if (size() == 0)
+    {
+        return T();
+    }
+    T ret = tail->data;
+    if (head == tail)
+    {
+        head = NULL;
+        delete tail;
+        tail = NULL;
+    } else {
+        LLNode<T>*  tmp = tail->prev;
+        if (tmp != NULL)
+            tmp->next = NULL;
+        delete tail;
+        tail = tmp;
+        
+    }
+    --count;
+    return ret;
+}
+
 };
 #endif /* defined(__LinkedList__LL__) */
