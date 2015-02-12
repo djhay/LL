@@ -13,6 +13,7 @@ template <typename T> struct LLNode
     T data;
     LLNode* next;
     LLNode* prev;
+    unsigned long time;
     
 };
 #endif

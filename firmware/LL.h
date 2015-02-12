@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include "LLNode.h"
+extern unsigned long millis();
 template <typename T>
 class LL
 {
@@ -37,7 +38,8 @@ public:
         curr->next = head;
         head = curr;
     }
-    ++count;
+        ++count;
+        head->time = millis();
     };
     T dequeue(){
         
@@ -62,6 +64,10 @@ public:
     --count;
     return ret;
 }
+    LLNode<T> peek()
+    {
+        return *tail;
+    }
 
 };
 #endif /* defined(__LinkedList__LL__) */
